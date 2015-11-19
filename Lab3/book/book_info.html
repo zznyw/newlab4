@@ -1,0 +1,21 @@
+<html>
+<head>
+<style type="text/css">
+body{background:url(thebook.jpg) no-repeat;
+}
+<title>Book Ifno</title>
+</style>
+</head>
+<body>
+<p>book info:</p>
+<table>
+	<tr><th>ISBN</th><th>Title</th><th>AuthorID</th><th>Publisher</th><th>PublishDate</th><th>Price</th></tr>
+	<tr><th>{{book_info.ISBN}}</th><th>{{book_info.Title}}</th><th>{{book_info.AuthorID}}</th><th>{{book_info.Publisher}}</th><th>{{book_info.PublishDate}}</th><th>{{book_info.Price}}</th></tr>
+</table>
+<p>author info:</p>
+<table>
+	<tr><th>AuthorID</th><th>Name</th><th>Age</th><th>Country</th></tr>
+	<tr><th>{{Author_info.AuthorID}}</th><th>{{Author_info.Name}}</th><th>{{Author_info.Age}}</th><th>{{Author_info.Country}}</th></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+<style type="text/css">
+body{background:url(search_author.jpg) no-repeat;
+}
+</style>
+</head>
+<body>
+
+<h1>按作者搜索书籍</h1>
+<hr />
+<form action="/AuthorSearch/" method="get">
+
+Please input name:
+<input type="text" name="author_name" />
+<input type="submit" value="search">
+{% if error %}
+	<p>{{error}}</p>
+	<p>{{Author}}</p>
+{% endif %}
+{% if right %}
+	<p>{{right}}</p>
+	<P>{{Author}}共有{{count}}本书籍：</p>
+	<p><a href="/addbook">add</a></p>
+	<hr />
+	<table>
+		<tr><th>Title</th><th>delete</th></tr>
+		{%if books %}
+			{% for temp_book in books %}
+				<tr>
+				<td><a href="/book_info/?ISBN={{temp_book.ISBN}}">{{ temp_book.Title }}</a></td>
+				<td><a href="/delete/?ISBN={{temp_book.ISBN}}&AuthorID={{temp_book.AuthorID}}">delete</a></td>
+				</tr>	
+			{% endfor %}
+		{% endif %}
+	</table>
+{% endif %}
+
+<br />
+</form>
+</body>
+</html>

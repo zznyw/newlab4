@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+
+</head>
+<body>
+<form action="/addbook" method="get">
+<h1>添加书籍:</h1>
+<p><a href="/AuthorSearch">返回</a></p>
+
+{% if ret %}
+	<p>{{ret}}</p>
+{% endif %}
+<hr/>
+{% if add_book %}
+	<h2>{{add_book}}</h2>
+	ISBN:
+	<input type="text" name="ISBN" value="ISBN"/>
+	<br/>
+	Title:
+	<input type="text" name="Title" value="Title"/>
+	<br/>
+	Author Name:
+	<input type="text" name="Author_name" value="Author Name"/>
+	<br/>
+	Publisher:
+	<input type="text" name="Publisher" value="Publisher"/>
+	<br/>
+	PublishDate:
+	<input type="text" name="PublishDate" value="PublishDate"/>
+	<br/>
+	Price:
+	<input type="text" name="Price" value="Price"/>
+	<hr/>
+	<input type="submit" name="addsub" value="add">
+{% endif %}
+<hr/>
+{% if add_author %}
+	<h2>{{add_author}}</h2>
+	
+	<input type="submit" name="again" value="try again!">
+	<br/>
+	Author Name:
+	<input type="text" name="Name" value="Author Name"/>
+	<br/>
+	AuthorID:
+	<input type="text" name="AuthorID" value="AuthorID"/>
+	<br/>
+	Age:
+	<input type="text" name="Age" value="Age"/>
+	<br/>
+	Country:
+	<input type="text" name="Country" value="Country"/>
+	<hr/>
+	<input type="submit" name="add_Author" value="add the Author and try again!">
+{% endif %}
+<hr/>
+</form>
+</body>
+</html>
